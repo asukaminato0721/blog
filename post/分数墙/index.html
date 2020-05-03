@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>分数墙 | wuyudi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://wuyudi.github.io//favicon.ico?v=1588522870486">
+<link rel="stylesheet" href="https://wuyudi.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="背景介绍
+今天介绍的作品是出自小学课本的练习题：分数墙
+
+预览图
+
+
+
+制作思路
+
+
+制作分数
+
+
+设层数是 k, 每层的编号字母是 j，宽度，以及总层数。
+
+
+归纳得到分母依次是 {{2,2},{3,3,3},{4,4,4,4}} 于是考..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://wuyudi.github.io/">
+        <img src="https://wuyudi.github.io//images/avatar.png?v=1588522870486" class="site-logo">
+        <h1 class="site-title">wuyudi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://wuyudi.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">分数墙</h2>
+            <div class="post-date">2020-05-04</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="背景介绍">背景介绍</h2>
+<p>今天介绍的作品是出自小学课本的练习题：分数墙</p>
+<hr>
+<h2 id="预览图">预览图</h2>
+<iframe scrolling="no"
+src="https://www.geogebra.org/material/iframe/id/ce9wjzet"
+width="800px"
+height="600px"
+style="border:0px;" allowfullscreen>
+</iframe>
+<hr>
+<h2 id="制作思路">制作思路</h2>
+<ol>
+<li>
+<p>制作分数</p>
+<ol>
+<li>
+<p>设层数是 <code>k</code>, 每层的编号字母是 <code>j</code>，<code>宽度</code>，以及总<code>层数</code>。</p>
+</li>
+<li>
+<p>归纳得到分母依次是 {{2,2},{3,3,3},{4,4,4,4}} 于是考虑用二次的序列来生成。</p>
+</li>
+<li>
+<p>再观察每个分数的位置，用 -k 代表 y，可以得到位置坐标为 <code>(宽度* (j-0.5)/(k)-0.25,-k-0.12)</code> ，这里的 -0.25 和 -0.12 保证数字在中间。</p>
+</li>
+<li>
+<p>最后，就能得到迭代分数的指令，内层循环是j 从 1 到 k , 外层是 k 从 2 到 <code>层数</code></p>
+</li>
+</ol>
+<pre><code class="language-mathematica">序列(
+    序列(
+        文本(
+            &quot;\frac{1}{&quot;+ (k)+ &quot;}&quot;,
+            (宽度 (j-0.5)/(k)-0.25,-k-0.12),
+            true,
+            true
+        )
+        ,j,1,k,1
+     )
+     ,k,2,层数,1
+ )
+</code></pre>
+</li>
+<li>
+<p>制作砖墙</p>
+<ol>
+<li>还是要先找到点的坐标规律。根据刚刚的指令，我们可以得到一个顶点的式子 <code>(j*(宽度)/(k),-k)</code></li>
+</ol>
+<p>取其后继: <code>((j+1)(宽度)/(k),-k)</code></p>
+<p>再顺时针取一圈，得到点</p>
+<pre><code class="language-mathematica">多边形(
+    (j*(宽度)/(k),-k),
+    ((j+1)(宽度)/(k),-k),
+    ((j+1)(宽度)/(k),-k)- (0,1),
+    (j*(宽度)/(k),-k)- (0,1)
+    )
+</code></pre>
+<p>把它套进序列里，就得到了</p>
+<pre><code class="language-mathematica">序列(
+    序列(
+        多边形(
+            (j*(宽度)/(k),-k),
+            ((j+1)(宽度)/(k),-k),
+            ((j+1)(宽度)/(k),-k)- (0,1),
+            (j*(宽度)/(k),-k)- (0,1)),
+            j,0,k-1,1
+        ),
+        k,2,层数,1
+    )
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2 id="课件链接">课件链接</h2>
+<ol>
+<li>
+<p><a href="https://ggb123.cn/m/ce9wjzet">https://ggb123.cn/m/ce9wjzet</a></p>
+</li>
+<li>
+<p><a href="https://geogebra.cn/m/ce9wjzet">https://geogebra.cn/m/ce9wjzet</a></p>
+</li>
+<li>
+<p><a href="https://geogebra.org/m/ce9wjzet">https://geogebra.org/m/ce9wjzet</a></p>
+</li>
+</ol>
+<hr>
+<h2 id="课件下载方法">课件下载方法</h2>
+<p>点击右上三个点，选择 在应用中打开。</p>
+<p>右上三条横线，选择下载。</p>
+
+            </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
