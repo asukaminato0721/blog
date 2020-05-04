@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wuyudi.github.io/blog</id>
     <title>wuyudi</title>
-    <updated>2020-05-04T17:03:39.169Z</updated>
+    <updated>2020-05-04T17:14:08.304Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wuyudi.github.io/blog"/>
     <link rel="self" href="https://wuyudi.github.io/blog/atom.xml"/>
@@ -39,7 +39,7 @@
 <p>建立坐标点 <code>A((j - 0.5) width / k,-k)</code>，用来描述文本位置。-0.5 保证文本在中间。</p>
 </li>
 <li>
-<p>建立文本,内容为 <code>$$\frac{1}{k}$$</code>， k 是层数，也是分母。</p>
+<p>建立文本,内容为 <code>$$\frac{1}{$bl{k,0}}$$</code>， k 是层数，也是分母。用 <code>$bl{k,0}</code> 来引用 k 的值，0 表示小数点后不保留位数，即取整。</p>
 </li>
 <li>
 <p>绑定文本到点</p>

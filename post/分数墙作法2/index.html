@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <!--https://github.com/getgridea/gridea/issues/437-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1588611548579">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1588612442892">
 <link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
 
 
@@ -50,7 +50,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://wuyudi.github.io/blog">
-        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1588611548579" class="site-logo">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1588612442892" class="site-logo">
         <h1 class="site-title">wuyudi</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -140,7 +140,7 @@
 <p>建立坐标点 <code>A((j - 0.5) width / k,-k)</code>，用来描述文本位置。-0.5 保证文本在中间。</p>
 </li>
 <li>
-<p>建立文本,内容为 <code>$$\frac{1}{k}$$</code>， k 是层数，也是分母。</p>
+<p>建立文本,内容为 <code>$$\frac{1}{$bl{k,0}}$$</code>， k 是层数，也是分母。用 <code>$bl{k,0}</code> 来引用 k 的值，0 表示小数点后不保留位数，即取整。</p>
 </li>
 <li>
 <p>绑定文本到点</p>
