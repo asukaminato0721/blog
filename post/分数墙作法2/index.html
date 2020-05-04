@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>分数墙作法2 | wuyudi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1588609872545">
+<link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="预览图
+
+
+用二次迭代完成这种作品能大幅降低难度。
+制作思路
+
+
+准备工作
+
+
+建立参数 j=1,k=2，作为迭代变量，计算 j+1,k+1
+
+
+建立 width=5,height=8,作为宽度，高度
+
+
+
+
+制作分数
+
+
+建立坐标点 A(..." />
+    <meta name="keywords" content="网络画板" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://wuyudi.github.io/blog">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1588609872545" class="site-logo">
+        <h1 class="site-title">wuyudi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://wuyudi.github.io/blog/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">分数墙作法2</h2>
+            <div class="post-date">2020-05-05</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="预览图">预览图</h2>
+<iframe allowfullscreen width="772" height="434" src="https://www.netpad.net.cn/thirdInnerPad.html#posts/202105"></iframe>
+<hr>
+<p>用二次迭代完成这种作品能大幅降低难度。</p>
+<h2 id="制作思路">制作思路</h2>
+<ol start="0">
+<li>
+<p>准备工作</p>
+<ol>
+<li>
+<p>建立参数 <code>j=1</code>,<code>k=2</code>，作为迭代变量，计算 <code>j+1</code>,<code>k+1</code></p>
+</li>
+<li>
+<p>建立 <code>width=5</code>,<code>height=8</code>,作为宽度，高度</p>
+</li>
+</ol>
+</li>
+<li>
+<p>制作分数</p>
+<ol>
+<li>
+<p>建立坐标点 <code>A((j - 0.5) width / k,-k)</code>，用来描述文本位置。-0.5 保证文本在中间。</p>
+</li>
+<li>
+<p>建立文本,内容为 <code>$$\frac{1}{k}$$</code>， k 是层数，也是分母。</p>
+</li>
+<li>
+<p>绑定文本到点</p>
+</li>
+</ol>
+</li>
+<li>
+<p>制作砖</p>
+<ol>
+<li>在坐标点的基础上，按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\pm0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 上下平移，按 <code>width / (2 k)</code> 左右平移。得到矩形的 4 个点。</li>
+</ol>
+<blockquote>
+<p>0.5 上下：一层高度的一半</p>
+<p>width/(2k): 每块砖有 width/k 宽，宽度一半</p>
+</blockquote>
+</li>
+<li>
+<p>迭代</p>
+<ol>
+<li><code>j -&gt; j+1</code> 的迭代,迭代深度 <code>k-1</code>,不保留点</li>
+</ol>
+<blockquote>
+<p>k-1 的原因：迭代原象也被显示了。如果想要次数为 k, 在迭代完成后，j 设为 0,隐藏迭代原象。</p>
+</blockquote>
+<ol start="2">
+<li><code>k -&gt; k+1</code> 的迭代，次数 <code>height-1</code> ,同理。</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="课件链接">课件链接</h2>
+<p><a href="https://www.netpad.net.cn/resource_web/course/#/202105">https://www.netpad.net.cn/resource_web/course/#/202105</a></p>
+<hr>
+<h2 id="写在最后">写在最后</h2>
+<p>这个作图过程，从高观点看，就是构造了一个 <code>f[j_,k_,width_]</code></p>
+<p>然后用二次迭代对其进行了 2 次遍历。</p>
+<pre><code class="language-Mathematica">Table[
+    Table[
+        f[j_,k_,width_],
+        {j,1,k-1}
+    ],
+    {k,2,height-1}
+]
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://wuyudi.github.io/blog/tag/jieofOsSZ/" class="tag">
+                    网络画板
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/分数墙/">
+                  <h3 class="post-title">
+                    分数墙
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

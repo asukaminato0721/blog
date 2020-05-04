@@ -2,13 +2,90 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wuyudi.github.io/blog</id>
     <title>wuyudi</title>
-    <updated>2020-05-04T04:31:11.262Z</updated>
+    <updated>2020-05-04T16:31:36.310Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wuyudi.github.io/blog"/>
     <link rel="self" href="https://wuyudi.github.io/blog/atom.xml"/>
     <logo>https://wuyudi.github.io/blog/images/avatar.png</logo>
     <icon>https://wuyudi.github.io/blog/favicon.ico</icon>
     <rights>All rights reserved 2020, wuyudi</rights>
+    <entry>
+        <title type="html"><![CDATA[分数墙作法2]]></title>
+        <id>https://wuyudi.github.io/blog/post/分数墙作法2/</id>
+        <link href="https://wuyudi.github.io/blog/post/分数墙作法2/">
+        </link>
+        <updated>2020-05-04T16:31:09.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="预览图">预览图</h2>
+<iframe allowfullscreen width="772" height="434" src="https://www.netpad.net.cn/thirdInnerPad.html#posts/202105"></iframe>
+<hr>
+<p>用二次迭代完成这种作品能大幅降低难度。</p>
+<h2 id="制作思路">制作思路</h2>
+<ol start="0">
+<li>
+<p>准备工作</p>
+<ol>
+<li>
+<p>建立参数 <code>j=1</code>,<code>k=2</code>，作为迭代变量，计算 <code>j+1</code>,<code>k+1</code></p>
+</li>
+<li>
+<p>建立 <code>width=5</code>,<code>height=8</code>,作为宽度，高度</p>
+</li>
+</ol>
+</li>
+<li>
+<p>制作分数</p>
+<ol>
+<li>
+<p>建立坐标点 <code>A((j - 0.5) width / k,-k)</code>，用来描述文本位置。-0.5 保证文本在中间。</p>
+</li>
+<li>
+<p>建立文本,内容为 <code>$$\frac{1}{k}$$</code>， k 是层数，也是分母。</p>
+</li>
+<li>
+<p>绑定文本到点</p>
+</li>
+</ol>
+</li>
+<li>
+<p>制作砖</p>
+<ol>
+<li>在坐标点的基础上，按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\pm0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 上下平移，按 <code>width / (2 k)</code> 左右平移。得到矩形的 4 个点。</li>
+</ol>
+<blockquote>
+<p>0.5 上下：一层高度的一半</p>
+<p>width/(2k): 每块砖有 width/k 宽，宽度一半</p>
+</blockquote>
+</li>
+<li>
+<p>迭代</p>
+<ol>
+<li><code>j -&gt; j+1</code> 的迭代,迭代深度 <code>k-1</code>,不保留点</li>
+</ol>
+<blockquote>
+<p>k-1 的原因：迭代原象也被显示了。如果想要次数为 k, 在迭代完成后，j 设为 0,隐藏迭代原象。</p>
+</blockquote>
+<ol start="2">
+<li><code>k -&gt; k+1</code> 的迭代，次数 <code>height-1</code> ,同理。</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="课件链接">课件链接</h2>
+<p><a href="https://www.netpad.net.cn/resource_web/course/#/202105">https://www.netpad.net.cn/resource_web/course/#/202105</a></p>
+<hr>
+<h2 id="写在最后">写在最后</h2>
+<p>这个作图过程，从高观点看，就是构造了一个 <code>f[j_,k_,width_]</code></p>
+<p>然后用二次迭代对其进行了 2 次遍历。</p>
+<pre><code class="language-Mathematica">Table[
+    Table[
+        f[j_,k_,width_],
+        {j,1,k-1}
+    ],
+    {k,2,height-1}
+]
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[分数墙]]></title>
         <id>https://wuyudi.github.io/blog/post/分数墙/</id>
