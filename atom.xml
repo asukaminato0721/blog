@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wuyudi.github.io/blog</id>
     <title>wuyudi</title>
-    <updated>2020-05-05T05:03:36.092Z</updated>
+    <updated>2020-05-05T05:15:50.022Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wuyudi.github.io/blog"/>
     <link rel="self" href="https://wuyudi.github.io/blog/atom.xml"/>
@@ -97,7 +97,7 @@
 <hr>
 <h2 id="预览图">预览图</h2>
 <iframe scrolling="no"
-src="http://geogebra.cn/material/iframe/id/ce9wjzet"
+src="https://ggb123.cn/material/iframe/id/ce9wjzet"
 width="800px"
 height="600px"
 style="border:0px;" allowfullscreen>
