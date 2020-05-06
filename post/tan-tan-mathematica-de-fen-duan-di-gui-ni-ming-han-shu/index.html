@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <!--https://github.com/getgridea/gridea/issues/437-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1588770200226">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1588770273005">
 <link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
 
 
@@ -32,7 +32,7 @@ f(x)={1−∣x−2∣x∈[1,3)2f(x−12)x⩾3f(2−x)Truef(x)=\begin{cases}
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://wuyudi.github.io/blog">
-        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1588770200226" class="site-logo">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1588770273005" class="site-logo">
         <h1 class="site-title">wuyudi</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -122,11 +122,11 @@ Plot[f[x],{x,-5,7}]
      # &lt; 1, #0[2 - #]
      ] &amp;
 
-Plot[{f[x], {x, -5, 7}]
+Plot[f[x], {x, -5, 7}]
 </code></pre>
 <p>此时 <code>f</code> 是一个纯函数。而非一开始的对 <code>x_</code> 的模式匹配。但是 <code>f</code> 还是被污染了。</p>
 <p>再直接点，把 <code>f</code> 省略了。Plot 里的 <code>x</code> 是 Block 后的局部变量，和外层的 <code>x</code> 无关。</p>
-<pre><code class="language-mathematica">Plot[{Which[
+<pre><code class="language-mathematica">Plot[Which[
      1 &lt;= # &lt; 3, 1 - Abs[# - 2],
      # &gt;= 3, 2 #0[(# - 1)/2],
      # &lt; 1, #0[2 - #]
