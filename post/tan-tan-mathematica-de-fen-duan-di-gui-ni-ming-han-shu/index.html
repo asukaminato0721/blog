@@ -1,21 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://wuyudi.github.io/blog</id>
-    <title>wuyudi</title>
-    <updated>2020-05-06T13:03:28.088Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wuyudi.github.io/blog"/>
-    <link rel="self" href="https://wuyudi.github.io/blog/atom.xml"/>
-    <logo>https://wuyudi.github.io/blog/images/avatar.png</logo>
-    <icon>https://wuyudi.github.io/blog/favicon.ico</icon>
-    <rights>All rights reserved 2020, wuyudi</rights>
-    <entry>
-        <title type="html"><![CDATA[谈谈 Mathematica 的分段递归匿名函数]]></title>
-        <id>https://wuyudi.github.io/blog/post/tan-tan-mathematica-de-fen-duan-di-gui-ni-ming-han-shu/</id>
-        <link href="https://wuyudi.github.io/blog/post/tan-tan-mathematica-de-fen-duan-di-gui-ni-ming-han-shu/">
-        </link>
-        <updated>2020-05-06T12:46:53.000Z</updated>
-        <content type="html"><![CDATA[<p>题目如下：</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>谈谈 Mathematica 的分段递归匿名函数 | wuyudi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<!--https://github.com/getgridea/gridea/issues/437-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1588770200226">
+<link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="题目如下：
+f(x)={1−∣x−2∣x∈[1,3)2f(x−12)x⩾3f(2−x)Truef(x)=\begin{cases}
+1-|x-2|&amp; x\in[1,3)\\
+2f\left(\frac{x-1}{2}\right)&..." />
+    <meta name="keywords" content="Mathematica" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://wuyudi.github.io/blog">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1588770200226" class="site-logo">
+        <h1 class="site-title">wuyudi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://wuyudi.github.io/blog/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">谈谈 Mathematica 的分段递归匿名函数</h2>
+            <div class="post-date">2020-05-06</div>
+            
+            <div class="post-content" v-pre>
+              <p>题目如下：</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>1</mn><mo>−</mo><mi mathvariant="normal">∣</mi><mi>x</mi><mo>−</mo><mn>2</mn><mi mathvariant="normal">∣</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo>)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>f</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo fence="true">)</mo></mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>⩾</mo><mn>3</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>f</mi><mo>(</mo><mn>2</mn><mo>−</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">e</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(x)=\begin{cases}
 1-|x-2|&amp; x\in[1,3)\\
 2f\left(\frac{x-1}{2}\right)&amp; x\geqslant 3\\
@@ -50,180 +133,59 @@ Plot[{f[x], {x, -5, 7}]
      ] &amp;[x], {x, -5, 7}]
 </code></pre>
 <p>这样就完成了分段递归匿名函数的定义与绘制。😄</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[分数墙作法2]]></title>
-        <id>https://wuyudi.github.io/blog/post/分数墙作法2/</id>
-        <link href="https://wuyudi.github.io/blog/post/分数墙作法2/">
-        </link>
-        <updated>2020-05-04T16:31:09.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="预览图">预览图</h2>
-<iframe allowfullscreen width="772" height="434" src="https://www.netpad.net.cn/thirdInnerPad.html#posts/202105"></iframe>
-<hr>
-<p>用二次迭代完成这种作品能大幅降低难度。</p>
-<h2 id="制作思路">制作思路</h2>
-<ol start="0">
-<li>
-<p>准备工作</p>
-<ol>
-<li>
-<p>建立参数 <code>j=1</code>,<code>k=2</code>，作为迭代变量，计算 <code>j+1</code>,<code>k+1</code></p>
-</li>
-<li>
-<p>建立 <code>width=5</code>,<code>height=8</code>,作为宽度，高度</p>
-</li>
-</ol>
-</li>
-<li>
-<p>制作分数</p>
-<ol>
-<li>
-<p>建立坐标点 <code>A((j - 0.5) width / k,-k)</code>，用来描述文本位置。-0.5 保证文本在中间。</p>
-</li>
-<li>
-<p>建立文本,内容为 <code>$$\frac{1}{$bl{k,0}}$$</code>， k 是层数，也是分母。用 <code>$bl{k,0}</code> 来引用 k 的值，0 表示小数点后不保留位数，即取整。</p>
-</li>
-<li>
-<p>绑定文本到点</p>
-</li>
-</ol>
-</li>
-<li>
-<p>制作砖</p>
-<ol>
-<li>在坐标点的基础上，按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\pm0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 上下平移，按 <code>width / (2 k)</code> 左右平移。得到矩形的 4 个点。</li>
-</ol>
-<blockquote>
-<p>0.5 上下：一层高度的一半</p>
-<p>width/(2k): 每块砖有 width/k 宽，宽度一半</p>
-</blockquote>
-</li>
-<li>
-<p>迭代</p>
-<ol>
-<li><code>j -&gt; j+1</code> 的迭代,迭代深度 <code>k-1</code>,不保留点</li>
-</ol>
-<blockquote>
-<p>k-1 的原因：迭代原象也被显示了。如果想要次数为 k, 在迭代完成后，j 设为 0,隐藏迭代原象。</p>
-</blockquote>
-<ol start="2">
-<li><code>k -&gt; k+1</code> 的迭代，次数 <code>height-1</code> ,同理。</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="课件链接">课件链接</h2>
-<p><a href="https://www.netpad.net.cn/resource_web/course/#/202105">https://www.netpad.net.cn/resource_web/course/#/202105</a></p>
-<hr>
-<h2 id="写在最后">写在最后</h2>
-<p>这个作图过程，从高观点看，就是构造了一个 <code>f[j_,k_,width_]</code></p>
-<p>然后用二次迭代对其进行了 2 次遍历。</p>
-<pre><code class="language-Mathematica">Table[
-    Table[
-        f[j_,k_,width_],
-        {j,1,k-1}
-    ],
-    {k,2,height-1}
-]
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[分数墙]]></title>
-        <id>https://wuyudi.github.io/blog/post/分数墙/</id>
-        <link href="https://wuyudi.github.io/blog/post/分数墙/">
-        </link>
-        <updated>2020-05-03T16:20:51.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="背景介绍">背景介绍</h2>
-<p>今天介绍的作品是出自小学课本的练习题：分数墙</p>
-<hr>
-<h2 id="预览图">预览图</h2>
-<iframe scrolling="no"
-src="https://ggb123.cn/material/iframe/id/ce9wjzet"
-width="800px"
-height="600px"
-style="border:0px;" allowfullscreen>
-</iframe>
-<hr>
-<h2 id="制作思路">制作思路</h2>
-<ol>
-<li>
-<p>制作分数</p>
-<ol>
-<li>
-<p>设层数是 <code>k</code>, 每层的编号字母是 <code>j</code>，<code>宽度</code>，以及总<code>层数</code>。</p>
-</li>
-<li>
-<p>归纳得到分母依次是 {{2,2},{3,3,3},{4,4,4,4}} 于是考虑用二次的序列来生成。</p>
-</li>
-<li>
-<p>再观察每个分数的位置，用 -k 代表 y，可以得到位置坐标为 <code>(宽度* (j-0.5)/(k)-0.25,-k-0.12)</code> ，这里的 -0.25 和 -0.12 保证数字在中间。</p>
-</li>
-<li>
-<p>最后，就能得到迭代分数的指令，内层循环是j 从 1 到 k , 外层是 k 从 2 到 <code>层数</code></p>
-</li>
-</ol>
-<pre><code class="language-mathematica">序列(
-    序列(
-        文本(
-            &quot;\frac{1}{&quot;+ (k)+ &quot;}&quot;,
-            (宽度 (j-0.5)/(k)-0.25,-k-0.12),
-            true,
-            true
-        )
-        ,j,1,k,1
-     )
-     ,k,2,层数,1
- )
-</code></pre>
-</li>
-<li>
-<p>制作砖墙</p>
-<ol>
-<li>还是要先找到点的坐标规律。根据刚刚的指令，我们可以得到一个顶点的式子 <code>(j*(宽度)/(k),-k)</code></li>
-</ol>
-<p>取其后继: <code>((j+1)(宽度)/(k),-k)</code></p>
-<p>再顺时针取一圈，得到点</p>
-<pre><code class="language-mathematica">多边形(
-    (j*(宽度)/(k),-k),
-    ((j+1)(宽度)/(k),-k),
-    ((j+1)(宽度)/(k),-k)- (0,1),
-    (j*(宽度)/(k),-k)- (0,1)
-    )
-</code></pre>
-<p>把它套进序列里，就得到了</p>
-<pre><code class="language-mathematica">序列(
-    序列(
-        多边形(
-            (j*(宽度)/(k),-k),
-            ((j+1)(宽度)/(k),-k),
-            ((j+1)(宽度)/(k),-k)- (0,1),
-            (j*(宽度)/(k),-k)- (0,1)),
-            j,0,k-1,1
-        ),
-        k,2,层数,1
-    )
-</code></pre>
-</li>
-</ol>
-<hr>
-<h2 id="课件链接">课件链接</h2>
-<ol>
-<li>
-<p><a href="https://ggb123.cn/m/ce9wjzet">https://ggb123.cn/m/ce9wjzet</a></p>
-</li>
-<li>
-<p><a href="https://geogebra.cn/m/ce9wjzet">https://geogebra.cn/m/ce9wjzet</a></p>
-</li>
-<li>
-<p><a href="https://geogebra.org/m/ce9wjzet">https://geogebra.org/m/ce9wjzet</a></p>
-</li>
-</ol>
-<hr>
-<h2 id="课件下载方法">课件下载方法</h2>
-<p>点击右上三个点，选择 在应用中打开。</p>
-<p>右上三条横线，选择下载。</p>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://wuyudi.github.io/blog/tag/KjxTxrnre/" class="tag">
+                    Mathematica
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/分数墙作法2/">
+                  <h3 class="post-title">
+                    分数墙作法2
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
