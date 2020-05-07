@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wuyudi.github.io/blog</id>
     <title>wuyudi</title>
-    <updated>2020-05-07T17:34:48.881Z</updated>
+    <updated>2020-05-07T17:52:01.189Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wuyudi.github.io/blog"/>
     <link rel="self" href="https://wuyudi.github.io/blog/atom.xml"/>
@@ -319,16 +319,16 @@ style="border:0px;" allowfullscreen>
 <td>停止更新</td>
 </tr>
 <tr>
+<td>使用人数</td>
+<td>目前使用人数很多</td>
+</tr>
+<tr>
 <td>稳定程度</td>
 <td>非常稳定，几乎没 bug</td>
 </tr>
 <tr>
 <td>多平台</td>
 <td>windows（安装包是否免费看脸）<p>Mac（据说bug很多）<p>iPad iOS10以下可只读打开文件（Sketch Explorer）</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>目前使用人数很多</td>
 </tr>
 <tr>
 <td>QQ群</td>
