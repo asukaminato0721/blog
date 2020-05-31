@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>网络画板 | wuyudi</title>
+<title>拓扑曲面 | wuyudi</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -19,7 +19,14 @@
 
 
 
-    <meta name="description" content="">
+    <meta name="description" content="灵感来自 3B1B 的视频
+连续的做不来，就考虑离散化。
+先随机生成点得到贝塞尔样条曲线，然后取样。
+随机点数=5;
+取样数=200;
+pts=RandomReal[1,{随机点数,2}];
+sam=Table[BSplineFunctio..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -89,28 +96,43 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 网络画板</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wuyudi.github.io/blog/post/分数墙作法2/">
-                  <h2 class="post-title">分数墙作法2</h2>
-                </a>
-                <div class="post-date">
-                  2020-05-05
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">拓扑曲面</h2>
+            <div class="post-date">2019-10-11</div>
+            
+            <div class="post-content" v-pre>
+              <p>灵感来自 <a href="https://www.bilibili.com/video/av7053135">3B1B 的视频</a></p>
+<p>连续的做不来，就考虑离散化。</p>
+<p>先随机生成点得到贝塞尔样条曲线，然后取样。</p>
+<pre><code class="language-Mathematica">随机点数=5;
+取样数=200;
+pts=RandomReal[1,{随机点数,2}];
+sam=Table[BSplineFunction[pts,SplineClosed-&gt;True][t],{t,0,1,1/取样数}];
+Show[
+ListPlot3D[MapThread[Append[#2,#1]&amp;,{EuclideanDistance@@@#,Mean/@#}&amp;@Subsets[sam,{2}]],PlotRange-&gt;Full],
+ParametricPlot3D[Append[BSplineFunction[pts,SplineClosed-&gt;True][t],0],{t,0,1}]
+]
+</code></pre>
+<iframe height=600 width=800 src="//player.bilibili.com/player.html?aid=7053135&cid=11499111&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+</iframe>
+<p>4:25 处</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/用迭代编程/">
+                  <h3 class="post-title">
+                    用迭代编程
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>网络画板 | wuyudi</title>
+<title>Mathematica 的奇技淫巧 | wuyudi</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -19,7 +19,13 @@
 
 
 
-    <meta name="description" content="">
+    <meta name="description" content="
+但是基本没啥用
+
+更方便的积分
+Unprotect[Integrate];
+Integrate[expr_]:=Integrate[expr,##]&amp;@@Variables[expr/.Equal-&gt;List//Flatte..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -89,28 +95,71 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 网络画板</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wuyudi.github.io/blog/post/分数墙作法2/">
-                  <h2 class="post-title">分数墙作法2</h2>
-                </a>
-                <div class="post-date">
-                  2020-05-05
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">Mathematica 的奇技淫巧</h2>
+            <div class="post-date">2019-09-06</div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+<p>但是基本没啥用</p>
+</blockquote>
+<p>更方便的积分</p>
+<pre><code class="language-Mathematica">Unprotect[Integrate];
+Integrate[expr_]:=Integrate[expr,##]&amp;@@Variables[expr/.Equal-&gt;List//Flatten;
+Protect[Integrate];
+</code></pre>
+<p>缺省时自动捕捉变量（by 深蓝）</p>
+<hr>
+<p>求解框符</p>
+<pre><code class="language-Mathematica">    CurrentValue[EvaluationNotebook[],{InputAliases,&quot;Solve&quot;}]=TemplateBox[{&quot;\[SelectionPlaceholder]&quot;},&quot;Solve&quot;,DisplayFunction-&gt;(RowBox@{#1,OverscriptBox[&quot;\[LongRightArrow]&quot;,s@&quot;求解&quot;]}&amp;)]/.s[e_]-&gt;StyleBox[e,Black,Plain,FontFamily-&gt;&quot;宋体&quot;];
+</code></pre>
+<p><code>ESC</code> Sol <code>TAB</code>（by Flaribbit）</p>
+<hr>
+<p>函数和图像同色</p>
+<pre><code class="language-Mathematica">    Plot[Style[x, Red], {x, 0, 5}]
+</code></pre>
+<p>接着选中 <code>Style[x, Red]</code> ，右键，在当前位置计算。（by Flaribbit）</p>
+<hr>
+<p>封装函数来魔改函数</p>
+<p>模式一</p>
+<pre><code class="language-Mathematica">f1[name_]:=Block[
+{},
+Unprotect[name];
+name[expr_]:=name[expr,##]&amp;@Variables[expr/.Equal-&gt;List//Flatten];
+Protect[name];
+]
+f1[Maximize]
+-x^2-y^2//Maximize
+</code></pre>
+<p>效果为 <code>Maximize[-x^2-y^2,{x,y}]</code></p>
+<p>模式二</p>
+<pre><code class="language-Mathematica">f1[name_]:=Block[
+{},Unprotect[name];
+name[expr_]:=name[expr,##]&amp;@@Variables[expr/.Equal-&gt;List//Flatten];
+Protect[name];
+]
+f1[Integrate]
+-x^2-y^2//Integrate
+</code></pre>
+<p>效果为 <code>Integrate[-x^2-y^2,x,y]</code></p>
+<hr>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/公交车的关门曲线/">
+                  <h3 class="post-title">
+                    公交车的关门曲线
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>

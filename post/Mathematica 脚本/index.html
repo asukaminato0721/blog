@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Mathematica 脚本 | wuyudi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<!--https://github.com/getgridea/gridea/issues/437-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1590916898808">
+<link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+本文后续打算更新在 知乎 上，目前 wls 功能已经完善得差不多了。作为先驱的任务基本结束了。
+
+众所周知，Mathematica 的前端唤醒速度非常慢。所以对于某些固定操作，往往写成 wls 脚本更方便。本文记录脚本的踩坑历史。
+在命令..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://wuyudi.github.io/blog">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1590916898808" class="site-logo">
+        <h1 class="site-title">wuyudi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://wuyudi.github.io/blog/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Mathematica 脚本</h2>
+            <div class="post-date">2019-09-06</div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+<p>本文后续打算更新在 知乎 上，目前 wls 功能已经完善得差不多了。作为先驱的任务基本结束了。</p>
+</blockquote>
+<p>众所周知，Mathematica 的前端唤醒速度非常慢。所以对于某些固定操作，往往写成 wls 脚本更方便。本文记录脚本的踩坑历史。</p>
+<p>在命令行界面，只有黑框，没有 GUI。</p>
+<p>如果要输入数据，<code>Input</code> 。如果要有提示符，<code>Input[&quot;reminding&quot;]</code>. 注意直接输入中文会成为乱码，需要输入 UTF-8。</p>
+<p>用 <code>InputString</code> 可以更好地操作，类似 C 直接读入字符串。</p>
+<p>同时，由于没有前端，所以尽量用 <code>Run</code> 而不是 <code>SystemOpen</code> 函数。用后者需要使用 <code>UsingFrontEnd</code> 函数。（此处感谢群友 chy 大神）</p>
+<p>输出需要用 <code>Print</code> 函数。</p>
+<p>举个例子，输入关键词并用 Google 在 Baidu.com 查询</p>
+<pre><code class="language-Mathematica">text=InputString[&quot;Input word: &quot;];
+data=text&lt;&gt;&quot; site:baidu.com&quot;;
+Run[&quot;start \&quot;\&quot; \&quot;&quot;&lt;&gt;&quot;https://www.google.com/search?q=&quot;&lt;&gt;data&lt;&gt;&quot;&amp;oq=&quot;&lt;&gt;data&lt;&gt;&quot;\&quot;&quot;]
+UsingFrontEnd[SystemOpen[&quot;https://www.google.com/search?q=&quot;&lt;&gt;data&lt;&gt;&quot;&amp;oq=&quot;&lt;&gt;data]]
+</code></pre>
+<p>读入一个 <code>JSON</code> 文件并计算 &amp; 打印结果</p>
+<pre><code class="language-Mathematica">raw=Import[&quot;D:\\xxx\\transfer_log.json&quot;];
+Which[
+DateList[][[3]]==2||17,{raw=raw/.(x_-&gt;n_?NumberQ)-&gt;x-&gt;0;
+Export[&quot;D:\\xxx\\transfer_log.json&quot;,raw]}
+];
+data=Total/@Transpose[raw/. (a_-&gt;{b_-&gt;c_,d_-&gt;e_})-&gt;{c,e}/BitShiftLeft[1.,30]];
+Print[&quot;\:5171\:7528 &quot;&lt;&gt;ToString@data[[1]]&lt;&gt;&quot;G \:4e0a\:4f20\:6d41\:91cf, &quot;&lt;&gt;ToString@data[[-1]]&lt;&gt;&quot;G \:4e0b\:8f7d\:6d41\:91cf,\:79bb\:7528\:5b8c\:8fd8\:6709 &quot;&lt;&gt;ToString[30-Total@data]&lt;&gt;&quot;G&quot;]
+</code></pre>
+<p>更多功能等待发掘中</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/Mathematica/">
+                  <h3 class="post-title">
+                    Mathematica 的奇技淫巧
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

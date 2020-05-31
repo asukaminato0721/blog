@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>傅里叶级数 | wuyudi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<!--https://github.com/getgridea/gridea/issues/437-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1590916898808">
+<link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="画圈圈
+f(t)=∑a=1nR(a)ev(a,t)if(t)=∑_{a=1}^{n}{R(a)\mathrm{e}^{v(a,t)i}} 
+f(t)=a=1∑n​R(a)ev(a,t)i
+
+
+Clear[&quot;Global`*&quo..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://wuyudi.github.io/blog">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1590916898808" class="site-logo">
+        <h1 class="site-title">wuyudi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://wuyudi.github.io/blog/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">傅里叶级数</h2>
+            <div class="post-date">2019-08-10</div>
+            
+            <div class="post-content" v-pre>
+              <p>画圈圈</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mi>R</mi><mo>(</mo><mi>a</mi><mo>)</mo><msup><mi mathvariant="normal">e</mi><mrow><mi>v</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mi>i</mi></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">f(t)=∑_{a=1}^{n}{R(a)\mathrm{e}^{v(a,t)i}} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.9185100000000004em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mord"><span class="mord"><span class="mord mathrm">e</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span><span class="mopen mtight">(</span><span class="mord mathdefault mtight">a</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">t</span><span class="mclose mtight">)</span><span class="mord mathdefault mtight">i</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<iframe width="800" height="600" src="https://www.netpad.net.cn/thirdInnerPad.html?id=135985#posts/135985" frameborder="0" scrolling="auto">
+</iframe>
+<pre><code class="language-mathematica">Clear[&quot;Global`*&quot;];
+n = 20;
+pt = {{-8., 0.}, 1};
+R[a_] = 2/a;
+v[a_] = 2 a t;
+tiaozheng[{{x_, y_}, a_}] := {{x, y}, R[a]};
+f[pt_] := Block[{pts, a},
+   pts = pt[[1]]; a = pt[[2]];
+   Return[{TranslationTransform[{R[a] Cos[v[a]], R[a] Sin[v[a]]}][pts], a + 1}];
+   ];
+pts = Flatten[Drop[#, -1] &amp; /@ NestList[f, pt, n], 1];
+pts1 = pts[[-1, -1]] /. t -&gt; (t + u);
+ListAnimate[ParallelTable[
+  Show[
+   Graphics@Point@pts,
+   Graphics@Line@pts,
+   Graphics /@ Circle @@@ (tiaozheng /@ NestList[f, pt, n][[;; -2]]),
+   Graphics@Line[{pts[[-1]], {0, pts[[-1]][[-1]]}}],
+   ListLinePlot[Table[{u, pts1}, {u, 0, t, 0.01}]],
+   Axes -&gt; True, PlotRange -&gt; {{-11., 6.}, {-5., 5.}}
+   ], {t, 12.3, 6.3, -0.04}]]
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://www.netpad.net.cn/courseImages/28165/cae3cc8762db8df5484a33820fa8a9c5.gif" alt="img" loading="lazy"></figure>
+<p>高级画圈圈</p>
+<pre><code class="language-mathematica">img = 1 - Import[&quot;https://www.netpad.net.cn/courseImages/28165/\
+97aacef3c7f22603cd535ca1de39920f.jpg&quot;];
+img = Binarize[img~ColorConvert~&quot;Grayscale&quot;~ImageResize~500~Blur~3]
+pts = DeleteDuplicates@
+   Cases[Normal@
+      ListContourPlot[Reverse@ImageData[img], 
+       Contours -&gt; {0.5}], _Line, -1][[1, 1]];
+center = Mean@MinMax[pts] &amp; /@ Transpose@pts;
+pts = # - center &amp; /@ pts[[;; ;; 20]];
+elephantPlot = ListPlot[pts, AspectRatio -&gt; Automatic]
+SetAttributes[toPt, Listable]
+toPt[z_] := ComplexExpand[{Re@z, Im@z}] // Chop;
+cf = Compile[{{z, _Complex, 1}}, 
+   Module[{n = Length@z}, 
+    1/n*Table[Sum[z[[k]]*Exp[-I*i*k*2 Pi/n], {k, 1, n}], {i, -m, m}]]];
+z = pts[[All, 1]] + I*pts[[All, 2]];
+m = 50;
+cn = cf[z];
+{f[t_], g[t_]} = 
+  Sum[cn[[j]]*Exp[I*(j - m - 1)*t], {j, 1, 2 m + 1}] // toPt;
+ParametricPlot[{f[t], g[t]}, {t, 0, 2 Pi}, AspectRatio -&gt; Automatic]
+r = Abs /@ cn;
+theta = Arg /@ cn;
+index = {m + 1}~Join~
+   Riffle[Range[m + 2, 2 m + 1], Reverse[Range[1, m]]];
+p[t_] = Accumulate@Table[cn[[j]]*Exp[I*(j - m - 1)*t], {j, index}] // 
+   toPt;
+circles[t_] = 
+  Table[Circle[p[t][[i]], r[[index[[i]]]]], {i, 1, 2 m + 1}];
+anims = ParallelTable[
+   ParametricPlot[{f[s], g[s]}, {s, 0, t}, AspectRatio -&gt; Automatic, 
+    Epilog -&gt; {circles[t][[2 ;;]], Line[p[t]], Point[p[t]]}, 
+    PlotRange -&gt; {{-400, 400}, {-400, 200}}, ImageSize -&gt; 500], {t, 
+    Subdivide[0.1, 4 Pi, 1000]}];
+ListAnimate@anims
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://www.netpad.net.cn/courseImages/28165/ad3a7d147ce50c4ff2c2105653f0e39b.gif" alt="img" loading="lazy"></figure>
+<blockquote>
+<p><a href="https://mathematica.stackexchange.com/questions/171755/how-can-i-draw-a-homer-with-epicycloids">相关链接</a></p>
+</blockquote>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/半圆上缠一根绳子，求绳子划过的面积/">
+                  <h3 class="post-title">
+                    半圆上缠一根绳子，求绳子划过的面积
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
