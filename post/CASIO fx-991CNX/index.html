@@ -1,301 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://wuyudi.github.io/blog</id>
-    <title>wuyudi</title>
-    <updated>2020-05-31T09:10:07.666Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wuyudi.github.io/blog"/>
-    <link rel="self" href="https://wuyudi.github.io/blog/atom.xml"/>
-    <logo>https://wuyudi.github.io/blog/images/avatar.png</logo>
-    <icon>https://wuyudi.github.io/blog/favicon.ico</icon>
-    <rights>All rights reserved 2020, wuyudi</rights>
-    <entry>
-        <title type="html"><![CDATA[logistics 映射]]></title>
-        <id>https://wuyudi.github.io/blog/post/logistics-ying-she/</id>
-        <link href="https://wuyudi.github.io/blog/post/logistics-ying-she/">
-        </link>
-        <updated>2020-05-07T15:07:42.000Z</updated>
-        <content type="html"><![CDATA[<p>logistics 映射是一种奇特的映射，结果与初值不敏感，但是随着初值的不同有很多不动点（反例就是洛伦茨吸引子）。具体背景请参见wiki 等。这里只给定义。</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>r</mi><msub><mi>x</mi><mi>n</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>∈</mo><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo><mi>r</mi><mo>∈</mo><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mn>4</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">x_{n+1}=rx_n(1-x_n),x_1\in (0,1),r\in [0,4]
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.638891em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mclose">]</span></span></span></span></span></p>
-<p>作出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><msub><mi>x</mi><mi mathvariant="normal">∞</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,x_{\infty})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的集合</p>
-<h2 id="geogebra">GeoGebra</h2>
-<pre><code class="language-javascript">序列(序列((r, 迭代(r x (1 - x), x_1, 30)), r, 0, 4, 0.01), x_1, 0.1, 0.9, 0.025)
-</code></pre>
-<p>预览图</p>
-<iframe scrolling="no"
-src="https://ggb123.cn/material/iframe/id/gud64emg"
-width="772"
-height="434"
-style="border:0px;" allowfullscreen>
-</iframe>
-<p>用迭代 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> 次的结果作为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi mathvariant="normal">∞</mi></msub></mrow><annotation encoding="application/x-tex">x_\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> . 用 2 个序列来遍历递推式的参数。</p>
-<h2 id="mathematica">Mathematica</h2>
-<pre><code class="language-mathematica">Table[{r, Nest[r # (1 - #) &amp;, x1, 100]}, {r, 0.01, 4., 0.01}, {x1, 
- 0.01, 1., 0.01}] // Catenate // ListPlot
-</code></pre>
-<p>用 <code>Nest</code> 来迭代，<code>Catenate</code> 来 <code>Flatten</code> 列表（比 <code>Flatten[#,1]&amp;</code> 更自然些）</p>
-<h2 id="网络画板">网络画板</h2>
-<iframe allowfullscreen width="772" height="434" src="https://www.netpad.net.cn/thirdInnerPad.html#posts/175589"></iframe>
-<p>制作过程：</p>
-<ol>
-<li>建立参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">r,x_1,n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span></li>
-<li>计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>∗</mo><msub><mi>x</mi><mn>1</mn></msub><mo>∗</mo><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">r*x_1*(1-x_1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.61528em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
-<li>计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">x_1+0.1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span></span></span></span></li>
-<li>作点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>(</mo><mi>r</mi><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">A(r,x_1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
-<li>迭代 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>→</mo><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">x_1\to x_1+0.1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span></span></span></span> (步长 0.1 )， 次数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> , 只显示终点。</li>
-<li>在终点上取点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>，作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的轨迹 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>，范围 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>4</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(0,4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mclose">)</span></span></span></span></li>
-<li>再作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的轨迹,范围 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[谈谈 Mathematica 的分段递归匿名函数]]></title>
-        <id>https://wuyudi.github.io/blog/post/tan-tan-mathematica-de-fen-duan-di-gui-ni-ming-han-shu/</id>
-        <link href="https://wuyudi.github.io/blog/post/tan-tan-mathematica-de-fen-duan-di-gui-ni-ming-han-shu/">
-        </link>
-        <updated>2020-05-06T12:46:53.000Z</updated>
-        <content type="html"><![CDATA[<p>题目如下：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>1</mn><mo>−</mo><mi mathvariant="normal">∣</mi><mi>x</mi><mo>−</mo><mn>2</mn><mi mathvariant="normal">∣</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo>)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>f</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo fence="true">)</mo></mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>⩾</mo><mn>3</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>f</mi><mo>(</mo><mn>2</mn><mo>−</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">e</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(x)=\begin{cases}
-1-|x-2|&amp; x\in[1,3)\\
-2f\left(\frac{x-1}{2}\right)&amp; x\geqslant 3\\
-f(2-x)&amp;\rm True
-\end{cases}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:4.32em;vertical-align:-1.9099999999999997em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.35002em;"><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-2.19999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.1500100000000004em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.30001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.60002em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.8500199999999998em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.41em;"><span style="top:-4.41em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mord">∣</span></span></span><span style="top:-2.97em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span><span style="top:-1.5300000000000002em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9099999999999997em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.41em;"><span style="top:-4.41em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span><span style="top:-2.97em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩾</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">3</span></span></span><span style="top:-1.5300000000000002em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">T</span><span class="mord mathrm">r</span><span class="mord mathrm">u</span><span class="mord mathrm">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.9099999999999997em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p>绘图。按照惯例要放网板&amp; GGB 的方法的，这里就省略了。</p>
-<pre><code class="language-mathematica">f[x_]:=Which[
-   1 &lt;= x &lt; 3, 1 - Abs[x - 2],
-   x &gt;= 3, 2 f[(x - 1)/2],
-   x &lt; 1, f[2 - x]
-   ]
-Plot[f[x],{x,-5,7}]
-</code></pre>
-<p>图略。</p>
-<p>本来这样应该就可以了，但是这样会污染掉 <code>f</code> 这个变量。所以作为 FP，就要一种无副作用的方式。匿名函数递归。</p>
-<p><code>f</code> 替换为 <code>#0</code>, <code>x</code> 替换为 <code>#</code></p>
-<pre><code class="language-mathematica">f=Which[
-     1 &lt;= # &lt; 3, 1 - Abs[# - 2],
-     # &gt;= 3, 2 #0[(# - 1)/2],
-     # &lt; 1, #0[2 - #]
-     ] &amp;
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
 
-Plot[f[x], {x, -5, 7}]
-</code></pre>
-<p>此时 <code>f</code> 是一个纯函数。而非一开始的对 <code>x_</code> 的模式匹配。但是 <code>f</code> 还是被污染了。</p>
-<p>再直接点，把 <code>f</code> 省略了。Plot 里的 <code>x</code> 是 Block 后的局部变量，和外层的 <code>x</code> 无关。</p>
-<pre><code class="language-mathematica">Plot[Which[
-     1 &lt;= # &lt; 3, 1 - Abs[# - 2],
-     # &gt;= 3, 2 #0[(# - 1)/2],
-     # &lt; 1, #0[2 - #]
-     ] &amp;[x], {x, -5, 7}]
-</code></pre>
-<p>这样就完成了分段递归匿名函数的定义与绘制。😄</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[分数墙作法2]]></title>
-        <id>https://wuyudi.github.io/blog/post/分数墙作法2/</id>
-        <link href="https://wuyudi.github.io/blog/post/分数墙作法2/">
-        </link>
-        <updated>2020-05-04T16:31:09.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="预览图">预览图</h2>
-<iframe allowfullscreen width="772" height="434" src="https://www.netpad.net.cn/thirdInnerPad.html#posts/202105"></iframe>
-<hr>
-<p>用二次迭代完成这种作品能大幅降低难度。</p>
-<h2 id="制作思路">制作思路</h2>
-<ol start="0">
-<li>
-<p>准备工作</p>
-<ol>
-<li>
-<p>建立参数 <code>j=1</code>,<code>k=2</code>，作为迭代变量，计算 <code>j+1</code>,<code>k+1</code></p>
-</li>
-<li>
-<p>建立 <code>width=5</code>,<code>height=8</code>,作为宽度，高度</p>
-</li>
-</ol>
-</li>
-<li>
-<p>制作分数</p>
-<ol>
-<li>
-<p>建立坐标点 <code>A((j - 0.5) width / k,-k)</code>，用来描述文本位置。-0.5 保证文本在中间。</p>
-</li>
-<li>
-<p>建立文本,内容为 <code>$$\frac{1}{$bl{k,0}}$$</code>， k 是层数，也是分母。用 <code>$bl{k,0}</code> 来引用 k 的值，0 表示小数点后不保留位数，即取整。</p>
-</li>
-<li>
-<p>绑定文本到点</p>
-</li>
-</ol>
-</li>
-<li>
-<p>制作砖</p>
-<ol>
-<li>在坐标点的基础上，按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\pm0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span> 上下平移，按 <code>width / (2 k)</code> 左右平移。得到矩形的 4 个点。</li>
-</ol>
-<blockquote>
-<p>0.5 上下：一层高度的一半</p>
-<p>width/(2k): 每块砖有 width/k 宽，宽度一半</p>
-</blockquote>
-</li>
-<li>
-<p>迭代</p>
-<ol>
-<li><code>j -&gt; j+1</code> 的迭代,迭代深度 <code>k-1</code>,不保留点</li>
-</ol>
-<blockquote>
-<p>k-1 的原因：迭代原象也被显示了。如果想要次数为 k, 在迭代完成后，j 设为 0,隐藏迭代原象。</p>
-</blockquote>
-<ol start="2">
-<li><code>k -&gt; k+1</code> 的迭代，次数 <code>height-1</code> ,同理。</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="课件链接">课件链接</h2>
-<p><a href="https://www.netpad.net.cn/resource_web/course/#/202105">https://www.netpad.net.cn/resource_web/course/#/202105</a></p>
-<hr>
-<h2 id="写在最后">写在最后</h2>
-<p>这个作图过程，从高观点看，就是构造了一个 <code>f[j_,k_,width_]</code></p>
-<p>然后用二次迭代对其进行了 2 次遍历。</p>
-<pre><code class="language-Mathematica">Table[
-    Table[
-        f[j_,k_,width_],
-        {j,1,k-1}
-    ],
-    {k,2,height-1}
-]
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[分数墙]]></title>
-        <id>https://wuyudi.github.io/blog/post/分数墙/</id>
-        <link href="https://wuyudi.github.io/blog/post/分数墙/">
-        </link>
-        <updated>2020-05-03T16:20:51.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="背景介绍">背景介绍</h2>
-<p>今天介绍的作品是出自小学课本的练习题：分数墙</p>
-<hr>
-<h2 id="预览图">预览图</h2>
-<iframe scrolling="no"
-src="https://ggb123.cn/material/iframe/id/ce9wjzet"
-width="800px"
-height="600px"
-style="border:0px;" allowfullscreen>
-</iframe>
-<hr>
-<h2 id="制作思路">制作思路</h2>
-<ol>
-<li>
-<p>制作分数</p>
-<ol>
-<li>
-<p>设层数是 <code>k</code>, 每层的编号字母是 <code>j</code>，<code>宽度</code>，以及总<code>层数</code>。</p>
-</li>
-<li>
-<p>归纳得到分母依次是 {{2,2},{3,3,3},{4,4,4,4}} 于是考虑用二次的序列来生成。</p>
-</li>
-<li>
-<p>再观察每个分数的位置，用 -k 代表 y，可以得到位置坐标为 <code>(宽度* (j-0.5)/(k)-0.25,-k-0.12)</code> ，这里的 -0.25 和 -0.12 保证数字在中间。</p>
-</li>
-<li>
-<p>最后，就能得到迭代分数的指令，内层循环是j 从 1 到 k , 外层是 k 从 2 到 <code>层数</code></p>
-</li>
-</ol>
-<pre><code class="language-mathematica">序列(
-    序列(
-        文本(
-            &quot;\frac{1}{&quot;+ (k)+ &quot;}&quot;,
-            (宽度 (j-0.5)/(k)-0.25,-k-0.12),
-            true,
-            true
-        )
-        ,j,1,k,1
-     )
-     ,k,2,层数,1
- )
-</code></pre>
-</li>
-<li>
-<p>制作砖墙</p>
-<ol>
-<li>还是要先找到点的坐标规律。根据刚刚的指令，我们可以得到一个顶点的式子 <code>(j*(宽度)/(k),-k)</code></li>
-</ol>
-<p>取其后继: <code>((j+1)(宽度)/(k),-k)</code></p>
-<p>再顺时针取一圈，得到点</p>
-<pre><code class="language-mathematica">多边形(
-    (j*(宽度)/(k),-k),
-    ((j+1)(宽度)/(k),-k),
-    ((j+1)(宽度)/(k),-k)- (0,1),
-    (j*(宽度)/(k),-k)- (0,1)
-    )
-</code></pre>
-<p>把它套进序列里，就得到了</p>
-<pre><code class="language-mathematica">序列(
-    序列(
-        多边形(
-            (j*(宽度)/(k),-k),
-            ((j+1)(宽度)/(k),-k),
-            ((j+1)(宽度)/(k),-k)- (0,1),
-            (j*(宽度)/(k),-k)- (0,1)),
-            j,0,k-1,1
-        ),
-        k,2,层数,1
-    )
-</code></pre>
-</li>
-</ol>
-<hr>
-<h2 id="课件链接">课件链接</h2>
-<ol>
-<li>
-<p><a href="https://ggb123.cn/m/ce9wjzet">https://ggb123.cn/m/ce9wjzet</a></p>
-</li>
-<li>
-<p><a href="https://geogebra.cn/m/ce9wjzet">https://geogebra.cn/m/ce9wjzet</a></p>
-</li>
-<li>
-<p><a href="https://geogebra.org/m/ce9wjzet">https://geogebra.org/m/ce9wjzet</a></p>
-</li>
-</ol>
-<hr>
-<h2 id="课件下载方法">课件下载方法</h2>
-<p>点击右上三个点，选择 在应用中打开。</p>
-<p>右上三条横线，选择下载。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CASIO fx-991CNX在高中解题中的应用]]></title>
-        <id>https://wuyudi.github.io/blog/post/CASIO fx-991CNX/</id>
-        <link href="https://wuyudi.github.io/blog/post/CASIO fx-991CNX/">
-        </link>
-        <updated>2018-07-14T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<ul>
-<li><a href="#%e4%b8%89%e8%a7%92">三角</a></li>
-<li><a href="#%e8%a7%a3%e6%9e%90%e5%87%a0%e4%bd%95">解析几何</a>
-<ul>
-<li><a href="#%e7%82%b9%e7%9a%84%e6%97%8b%e8%bd%ac">点的旋转</a></li>
-<li><a href="#%e5%bf%ab%e9%80%9f%e6%b1%82%e7%9b%b4%e7%ba%bf%e6%88%96%e4%ba%8c%e6%ac%a1%e5%87%bd%e6%95%b0%e6%96%b9%e7%a8%8b">快速求直线或二次函数方程</a></li>
-</ul>
-</li>
-<li><a href="#%e7%ab%8b%e4%bd%93%e5%87%a0%e4%bd%95">立体几何</a>
-<ul>
-<li><a href="#%e6%b1%82%e4%bd%93%e7%a7%af">求体积</a></li>
-<li><a href="#%e7%a9%ba%e9%97%b4%e4%b8%89%e8%a7%92%e5%bd%a2%e9%9d%a2%e7%a7%af">空间三角形面积</a></li>
-<li><a href="#%e5%90%91%e9%87%8f">向量</a></li>
-</ul>
-</li>
-<li><a href="#%e7%b4%af%e7%a7%af%e7%b1%bb%e6%af%94%e7%b4%af%e5%92%8c">累积（类比累和）</a></li>
-<li><a href="#%e6%8e%92%e5%88%97%e7%bb%84%e5%90%88">排列组合</a></li>
-<li><a href="#%e7%bb%93%e8%af%ad">结语</a></li>
-<li><a href="#%e4%b8%80%e4%b8%aa%e6%b2%a1%e7%94%a8%e7%9a%84%e6%9b%b4%e6%96%b0">一个没用的更新</a></li>
-</ul>
-<p><s>众所周知，CASIO fx-991CNX是上海考生的脑子</s></p>
-<p>本文来介绍一些 CASIO fx-991CNX 的神奇应用</p>
-]]></summary>
-        <content type="html"><![CDATA[<ul>
+<title>CASIO fx-991CNX在高中解题中的应用 | wuyudi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<!--https://github.com/getgridea/gridea/issues/437-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://wuyudi.github.io/blog/favicon.ico?v=1590916179687">
+<link rel="stylesheet" href="https://wuyudi.github.io/blog/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+三角
+解析几何
+
+点的旋转
+快速求直线或二次函数方程
+
+
+立体几何
+
+求体积
+空间三角形面积
+向量
+
+
+累积（类比累和）
+排列组合
+结语
+一个没用的更新
+
+众所周知，CASIO fx-991CNX是上海考生的脑子
+本文来介绍一些 CASI..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://wuyudi.github.io/blog">
+        <img src="https://wuyudi.github.io/blog/images/avatar.png?v=1590916179687" class="site-logo">
+        <h1 class="site-title">wuyudi</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://wuyudi.github.io/blog/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CASIO fx-991CNX在高中解题中的应用</h2>
+            <div class="post-date">2018-07-15</div>
+            
+            <div class="post-content" v-pre>
+              <ul>
 <li><a href="#%e4%b8%89%e8%a7%92">三角</a></li>
 <li><a href="#%e8%a7%a3%e6%9e%90%e5%87%a0%e4%bd%95">解析几何</a>
 <ul>
@@ -468,467 +289,51 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <h2 id="一个没用的更新">一个没用的更新</h2>
 <p><code>菜单</code> <code>4</code> ,矩阵模式 ， 定义一个矩阵 A ，调用，然后按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x^{-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span> 键，计算逆矩阵。（按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mrow><mtext> </mtext><mstyle mathsize="0.5em"><menclose notation="box" mathbackground="white"><mrow></mrow></menclose></mstyle></mrow></msup></mrow><annotation encoding="application/x-tex">x^{\,\tiny\fcolorbox{white}{white}{}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.533em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.533em;"><span style="top:-2.533em;margin-right:0.05em;"><span class="pstrut" style="height:2.17em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mspace mtight" style="margin-right:0.19516666666666668em;"></span><span class="mord sizing reset-size3 size1"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34em;"><span style="top:-2.3400000000000003em;"><span class="pstrut" style="height:2.68em;"></span><span class="stretchy fcolorbox" style="height:0.68em;background-color:white;border-color:white;"></span></span><span style="top:-2.68em;"><span class="pstrut" style="height:2.68em;"></span><span class="mord boxpad"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.34em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span> 再输入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span> 不行）</p>
 <p><a href="https://zhuanlan.zhihu.com/p/68193605">https://zhuanlan.zhihu.com/p/68193605</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[各种作图软件的对比]]></title>
-        <id>https://wuyudi.github.io/blog/post/各类作图软件的对比/</id>
-        <link href="https://wuyudi.github.io/blog/post/各类作图软件的对比/">
-        </link>
-        <updated>2016-12-31T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li><a href="#%e5%87%a0%e4%bd%95%e7%94%bb%e6%9d%bf">几何画板</a></li>
-<li><a href="#geogebra">GeoGebra</a></li>
-<li><a href="#%e8%8b%b1%e5%a3%ac%e7%94%bb%e6%9d%bfinrm3d">英壬画板(inRm3D)</a></li>
-<li><a href="#%e5%87%a0%e4%bd%95%e8%a1%a8%e8%be%be%e5%bc%8fgeometry-expression">几何表达式(Geometry Expression)</a></li>
-<li><a href="#%e5%87%a0%e4%bd%95%e5%9b%be%e9%9c%b8">几何图霸</a></li>
-<li><a href="#%e7%bd%91%e7%bb%9c%e7%94%bb%e6%9d%bfnetpad">网络画板(netpad)</a></li>
-<li><a href="#%e8%b6%85%e7%ba%a7%e7%94%bb%e6%9d%bfzz">超级画板（z+z）</a></li>
-<li><a href="#%e7%8e%b2%e7%8f%91%e7%94%bb%e6%9d%bf">玲珑画板</a></li>
-<li><a href="#%e7%9a%93%e9%aa%8f%e7%94%bb%e6%9d%bf">皓骏画板</a></li>
-<li><a href="#cabri-3d">Cabri 3D</a></li>
-<li><a href="#desmos">Desmos</a></li>
-</ul>
-<p>本文将从多角度对软件作综合评价。</p>
-<p>会给合法的下载链接。</p>
-<p>本文不复述百度百科上能查到的内容。</p>
-<h2 id="几何画板">几何画板</h2>
-<p>动态几何作图软件鼻祖，相信很多人第一次听说的就是它。笔者第一次接触的也是它。</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td>收费</td>
-</tr>
-<tr>
-<td>链接</td>
-<td><a href="http://www.jihehuaban.com.cn/">国内代理的链接</a> <a href="http://www.keycurriculum.com/">国外链接</a></td>
-</tr>
-<tr>
-<td>3D</td>
-<td>不支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>仅支持一次迭代</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>停止更新</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>目前使用人数很多</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>非常稳定，几乎没 bug</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>windows（安装包是否免费看脸）<p>Mac（据说bug很多）<p>iPad iOS10以下可只读打开文件（Sketch Explorer）</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>不一一列举了</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>不支持 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>可以说是遍地教程，还有唐老师编写的手册</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>支持</td>
-</tr>
-</tbody>
-</table>
-<p><s>然而从几何画板转到别的软件的人基本没回来过的</s></p>
-<p>（出于某种原因，如今很少用了）</p>
-<h2 id="geogebra"><a href="https://www.geogebra.org/">GeoGebra</a></h2>
-<p>集符号运算和几何作图于一体，弱化版 Mathematica</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td>免费</td>
-</tr>
-<tr>
-<td>链接</td>
-<td><a href="http://download.geogebra.org/installers/5.0/">下载链接</a></td>
-</tr>
-<tr>
-<td>3D</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>迭代原理和几何画板不同，笔者也不熟练，所以从略</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>保持更新</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>随版本更新有可接受的小 bug</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>全平台</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>使用人数增加中,人教版新版用了 ggb 的插图</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>217440999 583765627</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>支持 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>有 MOOC 可以听<p>有唐老师编写的手册</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>支持</td>
-</tr>
-</tbody>
-</table>
-<h2 id="英壬画板inrm3d">英壬画板(inRm3D)</h2>
-<p>笔者为了画3D接触的软件</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td>免费</td>
-</tr>
-<tr>
-<td>链接</td>
-<td><a href="https://inrm3d.github.io/">下载链接</a></td>
-</tr>
-<tr>
-<td>3D</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>支持高次迭代</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>取决于使用者<s>报bug</s>的数量</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>bug略多，可以接受</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>仅windows</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>人数有点少</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>170568550</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>不支持</td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>有唐老师，方老师（开发者）编写的手册，笔者曾参与修订</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>不支持</td>
-</tr>
-</tbody>
-</table>
-<h2 id="几何表达式geometry-expression">几何表达式(Geometry Expression)</h2>
-<p>笔者高三接触的软件，开始时不习惯，后来惊为天人。能支持直接度量为符号值的也只此一家了，且支持导出为LaTeX，Mathematica等软件的格式</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td></td>
-</tr>
-<tr>
-<td>链接</td>
-<td><a href="http://www.kejianyuan.net/Soft/201504/20150424150511.html">地址</a></td>
-</tr>
-<tr>
-<td>3D</td>
-<td>不支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>不支持迭代</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>蜗速</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>有些基本遇不到的bug</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>仅windows</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>人数更少</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>822606694</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>不支持 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>油管有英文教程，群里有笔者汉化（机翻）的最新教程</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>不支持</td>
-</tr>
-</tbody>
-</table>
-<p>属性很弱是不是？所以以演示为目的 的人请绕行。对计算有要求的请进，不会失望的。</p>
-<p><s>如果你发现没有免费/收费这一栏，就不要深究了。</s></p>
-<h2 id="几何图霸"><a href="http://www.3djihe.com/">几何图霸</a></h2>
-<p>笔者在找 inRm3D 同类软件时发现的，菜单界面挺适合新人的。</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td>免费</td>
-</tr>
-<tr>
-<td>链接</td>
-<td><a href="http://tuba.edusoa.com/dsideal_yy/html/ypt/lixiangtuba/index.html">地址</a></td>
-</tr>
-<tr>
-<td>3D</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>支持高次迭代</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>开发者是老师，所以在假期里会更新</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>(对象先后顺序明确)所以没bug</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>仅windows</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>人数中等</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>541446179</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>不支持 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>不清楚</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>支持</td>
-</tr>
-</tbody>
-</table>
-<h2 id="网络画板netpad"><a href="http://www.netpad.net.cn/">网络画板(netpad)</a></h2>
-<p>基于 Html5 开发，在线作图（也有本地版）配合 Chrome 使用更佳。记得时时清 cookies</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td>免费</td>
-</tr>
-<tr>
-<td>链接</td>
-<td><a href="http://www.netpad.net.cn/">地址</a></td>
-</tr>
-<tr>
-<td>3D</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>支持高次迭代</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>更新速度快（团队开发）</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>bug 还是略微有些的，都无伤大雅</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>全平台(只要能上网)</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>人数增加ing</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>307450983<p>575363420</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>支持 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>KaTeX</mtext></mrow><annotation encoding="application/x-tex">\KaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">K</span><span class="mspace" style="margin-right:-0.17em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>有教程，有视频网课</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>不支持，但是可以自己写 JavaScript 然后提交给开发组</td>
-</tr>
-</tbody>
-</table>
-<h2 id="超级画板zz">超级画板（z+z）</h2>
-<p>没用过，所以不能做评论</p>
-<h2 id="玲珑画板"><a href="http://www.linglong3d.net/">玲珑画板</a></h2>
-<p>保证了基本的作图功能，非常简洁</p>
-<table>
-<thead>
-<tr>
-<th>方面</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否免费</td>
-<td>免费用，付费注册</td>
-</tr>
-<tr>
-<td>链接</td>
-<td>安装包在群文件</td>
-</tr>
-<tr>
-<td>3D</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>迭代方便程度</td>
-<td>不支持迭代</td>
-</tr>
-<tr>
-<td>更新速度</td>
-<td>不清楚</td>
-</tr>
-<tr>
-<td>稳定程度</td>
-<td>bug 应该没有（我只用了一会会）</td>
-</tr>
-<tr>
-<td>多平台</td>
-<td>windows</td>
-</tr>
-<tr>
-<td>使用人数</td>
-<td>宣传力度挺大的，人数相对较多</td>
-</tr>
-<tr>
-<td>QQ群</td>
-<td>142671406   120343870   116929301</td>
-</tr>
-<tr>
-<td>公式</td>
-<td>不清楚</td>
-</tr>
-<tr>
-<td>教程丰富度</td>
-<td>有视频</td>
-</tr>
-<tr>
-<td>自定义工具</td>
-<td>不清楚</td>
-</tr>
-</tbody>
-</table>
-<p>很多作图元素都是现成的，对于一些小图速度非常快。</p>
-<h2 id="皓骏画板">皓骏画板</h2>
-<p>同 超级画板</p>
-<h2 id="cabri-3d">Cabri 3D</h2>
-<p>同 超级画板</p>
-<h2 id="desmos">Desmos</h2>
-<p>在线作函数图像，用得不深入，无法过多评判</p>
-<p><a href="https://www.desmos.com/">https://www.desmos.com/</a></p>
-<p>文末附一些链接</p>
-<p><a href="http://www.inrm3d.cn/index.php">画板论坛</a></p>
-<p><a href="http://jiaoshiqun.cn/ggb/portal.php">GeoGebra论坛</a></p>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wuyudi.github.io/blog/post/各类作图软件的对比/">
+                  <h3 class="post-title">
+                    各种作图软件的对比
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
